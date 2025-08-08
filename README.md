@@ -105,7 +105,7 @@ streamlit run dashboard.py
 | Runtime       | Duration in minutes               |
 
 
-### Checkout the streamlit dashboard:
+### Checkout the streamlit dashboard:https://moviepythonproject-5r39vvmqcnyduzgvkjzezu.streamlit.app/
 
 
 
