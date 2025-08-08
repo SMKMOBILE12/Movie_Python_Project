@@ -28,7 +28,7 @@ filtered_df = df[
 ]
 
 # Title
-st.title("🎬 Movie Ratings & Revenue Analysis")
+st.title("Movie Ratings & Revenue Analysis")
 st.markdown("An interactive dashboard to explore movie data, ratings, and revenue trends.")
 
 # KPIs
@@ -43,13 +43,13 @@ with col3:
 st.markdown("---")
 
 # Ratings Distribution
-st.subheader("📊 Distribution of Ratings")
+st.subheader("Distribution of Ratings")
 fig, ax = plt.subplots()
 sns.histplot(filtered_df["Rating"], kde=True, bins=20, ax=ax)
 st.pyplot(fig)
 
 # Revenue by Genre
-st.subheader("💰 Average Revenue by Genre")
+st.subheader("Average Revenue by Genre")
 genre_revenue = filtered_df.groupby("Genre")["revenue"].mean().sort_values(ascending=False).head(10)
 fig, ax = plt.subplots(figsize=(10, 5))
 genre_revenue.plot(kind='bar', ax=ax)
@@ -57,18 +57,18 @@ plt.ylabel("Revenue (Millions)")
 st.pyplot(fig)
 
 # Top 10 Movies by Revenue
-st.subheader("🏆 Top 10 Movies by Revenue")
+st.subheader("Top 10 Movies by Revenue")
 top_movies = filtered_df.sort_values("revenue", ascending=False)[["Title", "revenue", "Rating", "Year"]].head(10)
 st.dataframe(top_movies)
 
 # Scatter Plot - Revenue vs Rating
-st.subheader("🔍 Revenue vs Rating")
+st.subheader("Revenue vs Rating")
 fig, ax = plt.subplots()
 sns.scatterplot(data=filtered_df, x="Rating", y="revenue", ax=ax)
 st.pyplot(fig)
 
 # Correlation Heatmap
-st.subheader("🧠 Correlation Heatmap")
+st.subheader("Correlation Heatmap")
 numeric_cols = ["Year", "runtime", "Rating", "Votes", "revenue", "Metascore"]
 corr = filtered_df[numeric_cols].corr()
 fig, ax = plt.subplots()
@@ -77,3 +77,4 @@ st.pyplot(fig)
 
 # Footer
 st.markdown("[GitHub Repo](https://github.com/SMKMOBILE12/Movie_Python_Project)")
+
